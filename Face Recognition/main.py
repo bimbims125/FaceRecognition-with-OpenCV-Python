@@ -19,8 +19,9 @@ eyesDetector = cv2.CascadeClassifier('API/eyes.xml') #API Eyes Recognition
 while True:
     retV, frame = cam.read()
     abu = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = faceDetector.detectMultiScale(abu, 1.3, 5) #frame, scaleFactor, minkel
-    # eyes = eyesDetector.detectMultiScale(abu, 1.3, 5) #frame, scaleFactor, minkel
+    faces = faceDetector.detectMultiScale(abu, 1.3, 5) #frame, scaleFactor, neighbour
+
+    # eyes = eyesDetector.detectMultiScale(abu, 1.3, 5) #frame, scaleFactor, neighbour
 
 #Loop the recognition
     for (x, y, w, h) in faces:
